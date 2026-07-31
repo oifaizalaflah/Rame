@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Rame</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Layar Welcome / Input Pemain -->
+    <div id="welcome-screen" class="screen active">
+        <div style="text-align: center; margin-bottom: 30px;">
+            <h1 style="font-size: 4rem; font-weight: 800; background: linear-gradient(135deg, #fbbf24, #f59e0b); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin: 0; letter-spacing: -2px; filter: drop-shadow(0 4px 10px rgba(245, 158, 11, 0.3));">RAME</h1>
+            <p style="color: var(--text-muted); font-size: 1.1rem; margin-top: 5px; font-weight: 600; letter-spacing: 2px;">TONGKRONGAN PARTY HUB</p>
+        </div>
+        <div class="glass-card">
+            <h2 style="font-size: 1.5rem; margin-bottom: 10px; color: var(--text-main);">Siapa Aja Nih Yang Main?</h2>
+            <p>Masukkan nama temen-temen tongkronganmu (pisahkan dengan koma)</p>
+            <textarea id="player-input" placeholder="Contoh: Budi, Siti, Ujang"></textarea>
+            <button id="btn-start" class="btn-primary">GASS MAIN! 🚀</button>
+        </div>
+    </div>
+
+    <!-- Layar Menu Utama -->
+    <div id="main-menu" class="screen">
+        <div class="header">
+            <h2>Pilih Game</h2>
+            <button id="btn-reset-players" class="btn-outline">Reset Pemain</button>
+        </div>
+        
+        <div class="game-grid">
+            <div class="game-card" data-game="tentang-kita">
+                <div class="card-icon">💭</div>
+                <h3>Tentang Kita</h3>
+                <p>Kartu obrolan deep talk</p>
+            </div>
+            
+            <div class="game-card" data-game="cerdas-cermat">
+                <div class="card-icon">🧠</div>
+                <h3>Cerdas Cermat</h3>
+                <p>Adu pinter (atau ngawur)</p>
+            </div>
+            
+            <div class="game-card" data-game="tebak-kata">
+                <div class="card-icon">🗣️</div>
+                <h3>Tebak Kata</h3>
+                <p>Pegang HP di jidat!</p>
+            </div>
+
+            <div class="game-card" data-game="pernah-nggak">
+                <div class="card-icon">🤫</div>
+                <h3>Pernah / Nggak</h3>
+                <p>Bongkar aib masa lalu</p>
+            </div>
+
+            <div class="game-card" data-game="this-or-that">
+                <div class="card-icon">⚖️</div>
+                <h3>This / That</h3>
+                <p>Adu mekanik & debat kusir</p>
+            </div>
+            
+            <div class="game-card" data-game="siapa-paling">
+                <div class="card-icon">👉</div>
+                <h3>Siapa Paling...?</h3>
+                <p>Tunjuk teman yang paling pas!</p>
+            </div>
+
+            <div class="game-card" data-game="truth-or-dare">
+                <div class="card-icon">🫣</div>
+                <h3>Truth or Dare</h3>
+                <p>Uji nyali & kejujuran!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Kontainer Dinamis untuk Game -->
+    <div id="game-container" class="screen">
+        <div class="game-header">
+            <button id="btn-back-menu" class="btn-icon">⬅ Kembali</button>
+            <h3 id="current-game-title">Nama Game</h3>
+        </div>
+        <!-- Konten game akan dimuat di sini oleh JS -->
+        <div id="game-content"></div>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="sounds.js"></script>
+    <script src="data/content.js"></script>
+    <script src="games/truth-or-dare.js"></script>
+    <script src="games/cerdas-cermat.js"></script>
+    <script src="games/tebak-kata.js"></script>
+    <script src="games/pernah-nggak.js"></script>
+    <script src="games/this-or-that.js"></script>
+    <script src="games/siapa-paling.js"></script>
+    <script src="games/tentang-kita.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
