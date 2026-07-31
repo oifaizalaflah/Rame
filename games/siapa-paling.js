@@ -23,27 +23,34 @@ function initSiapaPaling(container, players) {
         if (window.SoundEngine) SoundEngine.revealAnswer();
 
         const gameContainer = document.getElementById('sp-game-container');
+        const qEl = document.getElementById('sp-question');
+        
+        // Add transition style to question element
+        qEl.style.transition = 'all 0.3s ease';
         
         gameContainer.addEventListener('click', () => {
-            currentQuestionIndex++;
-            if (currentQuestionIndex >= questions.length) {
-                // Ulangi dari awal dengan shuffle baru kalau habis
-                questions = [...GameData.siapaPaling].sort(() => Math.random() - 0.5);
-                currentQuestionIndex = 0;
-                alert('Pertanyaan habis! Kita acak lagi dari awal ya.');
-            }
-            
+            if (window.SoundEngine) SoundEngine.revealAnswer();
+
             // Animasi transisi
-            const qEl = document.getElementById('sp-question');
-            if(qEl) {
-                qEl.style.transition = 'all 0.2s ease-out';
-                qEl.style.opacity = '0';
-                qEl.style.transform = 'scale(0.9)';
-            }
+            qEl.style.transform = 'scale(0.95)';
+            qEl.style.opacity = '0';
             
             setTimeout(() => {
-                renderGame();
-            }, 200);
+                currentQuestionIndex++;
+                if (currentQuestionIndex >= questions.length) {
+                    // Ulangi dari awal dengan shuffle baru kalau habis
+                    questions = [...GameData.siapaPaling].sort(() => Math.random() - 0.5);
+                    currentQuestionIndex = 0;
+                    alert('Pertanyaan habis! Kita acak lagi dari awal ya.');
+                }
+                
+                // Update teks
+                qEl.innerText = questions[currentQuestionIndex];
+                
+                // Kembalikan animasi
+                qEl.style.transform = 'scale(1)';
+                qEl.style.opacity = '1';
+            }, 300);
         });
     }
 
