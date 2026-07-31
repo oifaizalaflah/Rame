@@ -12,6 +12,7 @@
     --accent-pn: #eab308; /* Kuning buat Pernah Nggak */
     --accent-tt: #f97316; /* Orange buat This / That */
     --accent-sp: #ec4899; /* Pink buat Siapa Yang Paling */
+    --accent-tk: #06b6d4; /* Cyan buat Tentang Kita */
 }
 
 * {
@@ -58,6 +59,10 @@ body {
     display: flex;
 }
 
+#welcome-screen {
+    justify-content: center;
+}
+
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -96,7 +101,7 @@ body {
     padding: 25px;
     width: 100%;
     max-width: 400px;
-    margin: auto;
+    margin: 0 auto;
     text-align: center;
     box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
@@ -253,6 +258,7 @@ textarea:focus {
 .game-card[data-game="pernah-nggak"] { border-bottom: 3px solid var(--accent-pn); }
 .game-card[data-game="this-or-that"] { border-bottom: 3px solid var(--accent-tt); }
 .game-card[data-game="siapa-paling"] { border-bottom: 3px solid var(--accent-sp); }
+.game-card[data-game="tentang-kita"] { border-bottom: 3px solid var(--accent-tk); }
 
 .card-icon {
     font-size: 3rem;

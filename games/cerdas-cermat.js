@@ -211,13 +211,15 @@ function initCerdasCermat(container, players) {
             nextBtn.classList.remove('animate-pop-in');
             
             const promptBox = document.getElementById('prompt-container');
-            promptBox.style.transition = '';
-            promptBox.style.opacity = '';
-            promptBox.style.transform = '';
-            
-            promptBox.classList.remove('animate-pop-in');
-            void promptBox.offsetWidth;
-            promptBox.classList.add('animate-pop-in');
+            if (promptBox) {
+                promptBox.style.transition = '';
+                promptBox.style.opacity = '';
+                promptBox.style.transform = '';
+                
+                promptBox.classList.remove('animate-pop-in');
+                void promptBox.offsetWidth;
+                promptBox.classList.add('animate-pop-in');
+            }
             
             reRenderScoreboard();
             return;
