@@ -11,7 +11,7 @@ function initSiapaPaling(container, players) {
                 
                 <div style="font-size: 3.5rem; margin-bottom:20px; text-shadow: var(--neon-glow); animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);">👉</div>
                 
-                <div id="sp-question" class="prompt-box animate-pop-in" style="font-size:1.6rem; font-weight:bold; color:var(--text-main); line-height:1.4; padding:30px 20px; border:2px solid var(--accent-sp); background:rgba(236, 72, 153, 0.1); width:100%; max-width:500px;">
+                <div id="sp-question" class="prompt-box animate-pop-in" style="font-size:1.6rem; font-weight:bold; color:var(--text-main); line-height:1.4; width:100%; max-width:500px;">
                     ${questions[currentQuestionIndex]}
                 </div>
                 

@@ -283,11 +283,18 @@ textarea:focus {
 .game-header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     margin-bottom: 15px;
     padding-bottom: 10px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
 }
+
+#btn-back-menu {
+    position: absolute;
+    left: 0;
+}
+
 .game-header h3 {
     font-size: 1.2rem;
     margin: 0;
