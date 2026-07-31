@@ -235,7 +235,7 @@ textarea:focus {
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
-    padding-bottom: 100px; /* Ditambah biar gak mentok di bawah */
+    padding-bottom: 50px; /* Dikurangi biar gak kejauhan */
 }
 
 .game-card {
