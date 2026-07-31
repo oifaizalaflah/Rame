@@ -23,6 +23,10 @@
     -webkit-tap-highlight-color: transparent;
 }
 
+html, body {
+    overscroll-behavior-y: none; /* Mencegah pull-to-refresh yang merusak layout */
+}
+
 body {
     background-color: var(--bg-color);
     color: var(--text-main);
