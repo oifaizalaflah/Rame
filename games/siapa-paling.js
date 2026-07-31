@@ -11,8 +11,10 @@ function initSiapaPaling(container, players) {
                 
                 <div style="font-size: 3.5rem; margin-bottom:20px; text-shadow: var(--neon-glow); animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);">👉</div>
                 
-                <div id="sp-question" class="prompt-box animate-pop-in" style="font-size:1.6rem; font-weight:bold; color:var(--text-main); line-height:1.4; width:100%; max-width:500px;">
-                    ${questions[currentQuestionIndex]}
+                <div id="sp-question-box" class="prompt-box animate-pop-in" style="width:100%; max-width:500px; transition: all 0.3s ease;">
+                    <div id="sp-question-text" style="font-size:1.6rem; font-weight:bold; color:var(--text-main); line-height:1.4; transition: all 0.3s ease;">
+                        ${questions[currentQuestionIndex]}
+                    </div>
                 </div>
                 
                 <p style="color:var(--text-muted); font-size:1rem; margin-top:25px; animation: fadeIn 1s;">Tunjuk temannya sekarang!</p>
@@ -23,17 +25,15 @@ function initSiapaPaling(container, players) {
         if (window.SoundEngine) SoundEngine.revealAnswer();
 
         const gameContainer = document.getElementById('sp-game-container');
-        const qEl = document.getElementById('sp-question');
-        
-        // Add transition style to question element
-        qEl.style.transition = 'all 0.3s ease';
+        const qBox = document.getElementById('sp-question-box');
+        const qText = document.getElementById('sp-question-text');
         
         gameContainer.addEventListener('click', () => {
             if (window.SoundEngine) SoundEngine.revealAnswer();
 
-            // Animasi transisi
-            qEl.style.transform = 'scale(0.95)';
-            qEl.style.opacity = '0';
+            // Animasi transisi mirip pernah-nggak
+            qBox.style.transform = 'scale(0.95)';
+            qText.style.opacity = '0';
             
             setTimeout(() => {
                 currentQuestionIndex++;
@@ -45,11 +45,11 @@ function initSiapaPaling(container, players) {
                 }
                 
                 // Update teks
-                qEl.innerText = questions[currentQuestionIndex];
+                qText.innerText = questions[currentQuestionIndex];
                 
                 // Kembalikan animasi
-                qEl.style.transform = 'scale(1)';
-                qEl.style.opacity = '1';
+                qBox.style.transform = 'scale(1)';
+                qText.style.opacity = '1';
             }, 300);
         });
     }
